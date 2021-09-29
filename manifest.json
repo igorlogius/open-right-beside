@@ -4,6 +4,7 @@
 	"scripts": [ "background.js" ]
   },
   "icons": {
+	  "128": "icon.png"
   },
   "description": "Open new tabs right beside their opener (aka. parent) tab or beside the currently active tab",
   "manifest_version": 2,
@@ -11,5 +12,5 @@
   "permissions": [
     "tabs"
   ],
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
