@@ -1,0 +1,3 @@
+#!/bin/bash
+export AMO='https://addons.mozilla.org/en-US/firefox/addon/open-right-beside' 
+curl 'https://raw.githubusercontent.com/igorlogius/meta-addon-builder/main/README' | sh
