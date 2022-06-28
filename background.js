@@ -1,34 +1,26 @@
-browser.tabs.onCreated.addListener(async function(newTab) {
+/*global browser */
 
-	if(newTab.pinned) { return; }
-	if(newTab.windowId < 1) { return; }
+// edge case for CTRL+T (new tab creation
+let prevTabId = null;
+let actiTabId = null;
+async function onActivated(activeInfo) {
+    prevTabId = activeInfo.previousTabId;
+    actiTabId = activeInfo.tabId;
+}
 
-	// move only works on "normal" windows
-	const newTabWin = await browser.windows.get(newTab.windowId);
-	if(newTabWin.type !== "normal") { return; }
+async function onCreated(newTab) {
+    let activeTab = null;
+    if(newTab.id === actiTabId){
+        activeTab = await browser.tabs.get(prevTabId);
+    }else{
+        activeTab = await browser.tabs.get(actiTabId);
+    }
+    if(newTab.windowId === activeTab.windowId){
+        browser.tabs.move(newTab.id, { index: activeTab.index + 1});
+        prevTabId = newTab.id;
+    }
+}
 
-	// only present if the opener tab still exists and is in the same window.
-	if(newTab.openerTabId > -1){
-		const openerTab = await browser.tabs.get(newTab.openerTabId);
-		if(openerTab.windowId === newTab.windowId) { 
-			if(openerTab.index > -1 && !openerTab.pinned) {
-				await browser.tabs.move(newTab.id, { index: (openerTab.index+1) });        
-				return;
-			}
-		}
-	}
+browser.tabs.onActivated.addListener(onActivated);
+browser.tabs.onCreated.addListener(onCreated);
 
-	//  
-	if(!newTab.active){
-		const activeTab = (await browser.tabs.query({currentWindow: true, active: true}))[0];
-		if(activeTab.windowId === newTab.windowId) { 
-			if(!activeTab.pinned && activeTab.index > -1) {
-				browser.tabs.move(newTab.id, { index: (activeTab.index+1) });        
-				return;
-			}
-		}
-		// move to the end ... might not be the best idea, but at least it is consistent 
-		browser.tabs.move(newTab.id, {index: -1});
-	}
-
-});
