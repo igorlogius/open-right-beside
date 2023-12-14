@@ -1,5 +1,12 @@
 Open new tabs right beside their opener (aka. parent) tab or beside the currently active tab
 
+<b>Short Demo Video:</b>
+
+
+https://github.com/igorlogius/open-right-beside/assets/67047467/b55ab14e-73bb-4c4b-85ce-f1a03b96e306
+
+
+
 Inspired by  "Open Tabs Next to Current" and "Always Right"
 which i took a look at and found them to be a little to bi/complex. Lines of JS Code comparision:  
 "Open Tabs Next to Current" (166), "Always Right"  (121) and "Open Right Beside" (27). And no that is no typo. 27 Lines of code. I's so small, i'll even post it here: 
