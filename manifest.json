@@ -1,16 +1,15 @@
 {
   "author": "igorlogius",
+  "homepage_url": "https://github.com/igorlogius",
   "background": {
-	"scripts": [ "background.js" ]
+    "scripts": ["background.js"]
   },
   "icons": {
-	  "128": "icon.png"
+    "128": "icon.png"
   },
   "description": "Open new tabs right beside their opener (aka. parent) tab or beside the currently active tab",
   "manifest_version": 2,
   "name": "Open Right Beside",
-  "permissions": [
-    "tabs"
-  ],
-  "version": "1.0.10"
+  "permissions": ["tabs"],
+  "version": "1.0.11"
 }
