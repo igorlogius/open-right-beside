@@ -1,5 +1,7 @@
 Open new tabs right beside their opener (aka. parent) tab or beside the currently active tab
 
+### [Click here to report a bug, make a suggestion or ask a question](https://github.com/igorlogius/igorlogius/issues/new/choose)
+
 <b>Short Demo Video:</b>
 
 https://github.com/igorlogius/open-right-beside/assets/67047467/b55ab14e-73bb-4c4b-85ce-f1a03b96e306
