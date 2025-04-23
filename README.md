@@ -2,4 +2,5 @@
 
 2. [Report a bug, make a suggestion or ask a question](https://github.com/igorlogius/igorlogius/issues/new/choose)
 
-3. https://github.com/igorlogius/open-right-beside/assets/67047467/b55ab14e-73bb-4c4b-85ce-f1a03b96e306
+3. [demo-2025-04-23_12.34.00.webm](https://github.com/user-attachments/assets/98b51a92-f770-4b69-aef0-d045d6715e86)
+
